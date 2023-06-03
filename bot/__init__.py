@@ -56,7 +56,7 @@ async def download(event):
             id_hex = hex(msg.id)[2:]
             id = f"{id_hex}/{get_file_name(msg)}"
             bot_url = f"t.me/{username_bot}?start={id_hex}"
-            await event.reply(f"Link to download file: \n\n📎 : {Config.DOMAIN}/{id}\n\n🤖 : {bot_url}")
+            await event.reply(f"Link to download file: \n\n📎 : {bot_url} \n\n• A Bot By @Prime_Hritu")
             return
 
         elif id_msg := re.search("/start (.*)", event.raw_text ):
@@ -77,16 +77,16 @@ async def download(event):
                         forward = await file.forward_to(event.chat_id)
                         id_name = f"{id_hex}/{get_file_name(msg)}"
                         bot_url = f"t.me/{username_bot}?start={id_hex}"
-                        forward_reply = await forward.reply(f"will be deleted in 21 seconds. \n\n📎 : {Config.DOMAIN}/{id_name}\n\n🤖 : {bot_url}",link_preview=False)
+                        forward_reply = await forward.reply(f"This Message will be deleted in 21 seconds. \n\n📎 : {bot_url}",link_preview=False)
                         await asyncio.sleep(12)
-                        await forward_reply.edit(f"will be deleted in 10 seconds. \n\n📎 : {Config.DOMAIN}/{id_name}\n\n🤖 : {bot_url}")
+                        await forward_reply.edit(f"This Message will be deleted in 10 seconds. \n\n📎 : {bot_url}")
                         await asyncio.sleep(10)
                         await forward.delete()
-                        await forward_reply.edit(f"📎 : {Config.DOMAIN}/{id_name}\n\n🤖 : {bot_url}",link_preview=True)
+                        await forward_reply.edit(f"📎 : {bot_url}",link_preview=True)
                 return
         
         if pv:
-            await event.reply("Send any file to get a link to download it")
+            await event.reply("Send any file to get a link to download it \n\n •A Bot By @Prime_Hritu")
         
 
     elif event.is_channel:
