@@ -19,7 +19,7 @@ jobs:
           repository: ${{ secrets.REPO_NAME }}
       - name: 📀 Install dependencies. 📀
         run: |
-          pip install aiohttp Pillow psutil hachoir tgcrypto Pyrogram==1.4.16 motor https://github.com/Tinche/aiofiles/archive/master.zip dnspython
+          pip install cryptg hachoir pillow werkzeug aiohttp Telethon requests gunicorn
       - name: 🏃‍♂️ Run the UserClient. 🏃‍♂️
         run: |
           python3 -m bot
